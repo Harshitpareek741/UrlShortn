@@ -1,3 +1,4 @@
+require('dotenv').config(); 
 const express = require("express");
 const app = express();
 const port = 8000;
@@ -8,6 +9,8 @@ const {auth,requiredRole} = require("./middleware/auth");
 const urlRouter = require("./routes/url");
 const cookieParser = require('cookie-parser');
 
+
+const url = process.env.DATABASE_URL;
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,7 +19,7 @@ app.use(express.json());
 app.listen(port,(req,res)=>{
   console.log(`we are listining at port ${port}`);
 });
-connectmongoose("mongodb://127.0.0.1:27017/urlShort")
+connectmongoose(url)
 .then(()=>{
     console.log("MongoDb is Connected");
 })
