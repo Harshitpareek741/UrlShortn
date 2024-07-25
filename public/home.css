@@ -1,0 +1,101 @@
+/* General styles */
+html,
+body {
+    margin: 0;
+    width: 100%;
+    color: hsl(var(--text-primary));
+    font-family: var(--font-main);
+    background-color: hsl(var(--background));
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+/* Flexbox Container Styles */
+.flexbox-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main Container */
+#main {
+    margin: 0 auto;
+    max-width: 100%; /* Adjusted width for readability */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 33, 33, 0.1);
+    border-radius: 8px;
+    background-color: hsl(var(--white));
+}
+
+/* Textarea Styling */
+textarea {
+    width: 75%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid hsl(var(--black));
+    background-color: hsl(var(--grooble));
+    color: hsl(var(--text-primary));
+    font-size: var(--paragraph);
+    resize: none; /* Prevent resizing */
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Read-only Styling */
+textarea[readonly] {
+    background-color: hsl(var(--white)); /* Slightly different background to indicate read-only */
+    /* Change cursor to indicate that the field is not editable */
+}
+
+/* Button Styling */
+button {
+    padding: .8em 1.2em;
+    border: 1px solid hsl(var(--black));
+    background-color: hsl(var(--primary));
+    color: hsl(var(--black));
+    font-size: var(--paragraph);
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+    transition: background-color .3s, color .3s;
+    margin-top: 10px; /* Space between textarea and button */
+}
+
+button:hover {
+    background-color: hsl(var(--background-secondary));
+    color: hsl(var(--white));
+}
+
+/* Updated .url-info styling */
+.url-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid hsl(var(--black)); /* Adjusted border color */
+    border-radius: 5px;
+    background-color: hsl(var(--white)); /* Adjusted background color */
+}
+
+.url-info p {
+    margin: 5px 0;
+}
+
+.url-info .short-id {
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .url-info {
+        padding: 8px;
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .url-info {
+        padding: 6px;
+        font-size: 12px; /* Further adjust font size for even smaller screens */
+    }
+}
