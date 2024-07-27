@@ -33,5 +33,5 @@ app.use(express.static('public'));
 
 app.use("/url",urlRouter);
 app.use("/",userRouter);
-app.use("/",router);
+app.use("/",[auth,requiredRole(["Normal","Admin"])],router);
 
